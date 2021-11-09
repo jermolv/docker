@@ -17,6 +17,18 @@ pipeline {
 				}
             }
         }
+
+        stage('a') {
+            steps {
+                bat "docker-compose build"
+            }
+        }
+
+        stage('b') {
+            steps {
+                bat "docker-compose up"
+            }
+        }
 		
     }
 }
